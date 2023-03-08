@@ -1,5 +1,5 @@
 <?php
-#
+#8.0.27で動作確認済み（さくらインターネットライト）
 
 // ファイルの先頭に文字列を追加する関数を作る
 function f_add_first_row($str, $file_name) {
@@ -21,8 +21,8 @@ if (isset($_POST['send']) === true and $_POST['message']) {
     $message = $_POST["message"];
 
     //htmlエスケープ
-    $name=htmlspecialchars($name,ENT_QUOTES | ENT_HTML5,$charset,false);
-    $message=htmlspecialchars($message,ENT_QUOTES | ENT_HTML5,$charset,false);
+    $name=htmlspecialchars($name,ENT_QUOTES | ENT_HTML5,"UTF-8");
+    $message=htmlspecialchars($message,ENT_QUOTES | ENT_HTML5,"UTF-8");
     
     /*
     必要ならばipアドレスやホスト名も記録する
@@ -48,7 +48,7 @@ if (isset($_POST['send']) === true and $_POST['message']) {
     $file_name = "bord.txt";
     
     //処理した文字列を書き込む  
-    
+
     f_add_first_row($str, $file_name);
 }
  
